@@ -1,11 +1,12 @@
 import { Layout } from "@/components/Layout";
 import { ProductCard } from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { useProducts } from "@/lib/productStore";
 import { useRoute } from "wouter";
 
 export default function CategoryPage() {
   const [match, params] = useRoute("/category/:category");
   const category = params?.category as 'perfume' | 'cologne' | 'clothing';
+  const { products } = useProducts();
 
   const categoryTitles = {
     perfume: "Car Perfumes",
@@ -17,13 +18,13 @@ export default function CategoryPage() {
 
   return (
     <Layout>
-       <div className="flex items-center justify-between mb-8 mt-4">
-            <div className="h-px bg-primary/30 flex-1"></div>
-            <h2 className="text-3xl md:text-4xl font-serif text-center px-8 text-primary">
-                {categoryTitles[category] || "Products"}
-            </h2>
-            <div className="h-px bg-primary/30 flex-1"></div>
-        </div>
+      <div className="flex items-center justify-between mb-8 mt-4">
+        <div className="h-px bg-primary/30 flex-1"></div>
+        <h2 className="text-3xl md:text-4xl font-serif text-center px-8 text-primary">
+          {categoryTitles[category] || "Products"}
+        </h2>
+        <div className="h-px bg-primary/30 flex-1"></div>
+      </div>
 
       {filteredProducts.length === 0 ? (
         <div className="text-center py-20">
