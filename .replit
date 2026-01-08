@@ -17,6 +17,7 @@ PORT = "5000"
 deploymentTarget = "static"
 build = ["npm", "run", "build"]
 publicDir = "dist/public"
+run = ["sh", "-c", "Yes"]
 
 [workflows]
 runButton = "Project"
