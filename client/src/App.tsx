@@ -9,6 +9,9 @@ import CategoryPage from "@/pages/category";
 import CartPage from "@/pages/cart";
 import TrackOrderPage from "@/pages/order-tracking";
 import ProductDetailPage from "@/pages/product-detail";
+import AuthPage from "@/pages/auth";
+import AdminPage from "@/pages/admin";
+import MyOrdersPage from "@/pages/my-orders";
 
 function Router() {
   return (
@@ -18,6 +21,9 @@ function Router() {
       <Route path="/cart" component={CartPage} />
       <Route path="/track-order" component={TrackOrderPage} />
       <Route path="/product/:id" component={ProductDetailPage} />
+      <Route path="/auth" component={AuthPage} />
+      <Route path="/admin" component={AdminPage} />
+      <Route path="/my-orders" component={MyOrdersPage} />
       <Route component={NotFound} />
     </Switch>
   );
